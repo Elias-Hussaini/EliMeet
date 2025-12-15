@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتاق دیدار</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="header">
+                <i class="fas fa-video fa-3x"></i>
+                <h1>اتاق دیدار</h1>
+                <p class="subtitle">کنفرانس ویدیویی سریع و ساده</p>
+            </div>
+            
+            <div class="user-info">
+                <div class="input-group">
+                    <label for="username"><i class="fas fa-user"></i> نام شما</label>
+                    <input type="text" id="username" placeholder="مثال: علی" value="کاربر">
+                </div>
+                
+                <div class="room-actions">
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <h3>اتاق جدید</h3>
+                        <p>اتاق جدید بسازید و لینک را ارسال کنید</p>
+                        <button id="createRoom" class="btn btn-primary">ساخت اتاق</button>
+                    </div>
+                    
+                    <div class="action-card">
+                        <div class="action-icon">
+                            <i class="fas fa-sign-in-alt"></i>
+                        </div>
+                        <h3>ورود به اتاق</h3>
+                        <p>با کد ۶ رقمی به اتاق بپیوندید</p>
+                        <div class="join-section">
+                            <input type="text" id="roomCode" placeholder="کد اتاق" maxlength="6">
+                            <button id="joinRoom" class="btn btn-secondary">ورود</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-info-circle"></i> راهنما</h3>
+                    <ul>
+                        <li>نیاز به ثبت‌نام ندارد</li>
+                        <li>کنفرانس ویدیویی رایگان</li>
+                        <li>کاربران محدود به ۵ نفر</li>
+                        <li>پشتیبانی از موبایل و تبلت</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer">
+                <p>برای استفاده در موبایل، لینک را در مرورگر باز کنید</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- پیام اطلاع‌رسانی -->
+<div id="notification" style="display: none; position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 15px; border-radius: 8px; z-index: 1000;">
+    <i class="fas fa-check-circle"></i> <span id="notificationText"></span>
+</div>
+
+<script>
+    // تابع نمایش اطلاع‌رسانی
+    function showNotification(message, type = 'success') {
+        const notification = document.getElementById('notification');
+        const text = document.getElementById('notificationText');
+        
+        notification.style.background = type === 'success' ? '#4CAF50' : '#f44336';
+        text.textContent = message;
+        notification.style.display = 'block';
+        
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+</script>
+</body>
+</html>
