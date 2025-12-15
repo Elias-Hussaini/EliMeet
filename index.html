@@ -62,27 +62,12 @@
             </div>
         </div>
     </div>
+<script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+<script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
 
     <script src="script.js"></script>
-    <!-- پیام اطلاع‌رسانی -->
-<div id="notification" style="display: none; position: fixed; top: 20px; right: 20px; background: #4CAF50; color: white; padding: 15px; border-radius: 8px; z-index: 1000;">
-    <i class="fas fa-check-circle"></i> <span id="notificationText"></span>
-</div>
+  
 
-<script>
-    // تابع نمایش اطلاع‌رسانی
-    function showNotification(message, type = 'success') {
-        const notification = document.getElementById('notification');
-        const text = document.getElementById('notificationText');
-        
-        notification.style.background = type === 'success' ? '#4CAF50' : '#f44336';
-        text.textContent = message;
-        notification.style.display = 'block';
-        
-        setTimeout(() => {
-            notification.style.display = 'none';
-        }, 3000);
-    }
-</script>
+
 </body>
 </html>
